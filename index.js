@@ -12,15 +12,16 @@ client.on('guildMemberUpdate', async (oldMember, newMember) => {
     if (!oldMember.premiumSince && newMember.premiumSince) {
         let embed = new MessageEmbed()
         .setColor(boostColor)
-        .setDescription(`${newMember.user.tag} لديك مميزات خاصة. بعد دعمك اللسيرفر ببوست. شكرا لك 💖 `);//هنا تقدر تغير الرسالة
+        .setDescription(`${newMember.user.tag} لديك مميزات خاصة. بعد دعمك اللسيرفر ببوست. شكرا لك 💖 `)
+        .setImage(`https://images-ext-1.discordapp.net/external/fZGVIIB0RH1LxPacA8OfFHc_8YpMV5Y9uVdH5Jem1es/https/probot.media/kYBKdSyYQi.gif`);//هنا تقدر تغير الرسالة
         return  client.channels.cache.get(idchannel).send(embed)
     }
     if (oldMember.premiumSince && newMember.premiumSince) {
         let embed = new MessageEmbed()
         .setColor(boostColor)
-        .setDescription(`${newMember.user.tag} لديك مميزات خاصة. بعد دعمك اللسيرفر ببوست. شكرا لك على البوست الثاني💖`);//هنا تقدر تغير الرسالة
+        .setDescription(`${newMember.user.tag} لديك مميزات خاصة. بعد دعمك اللسيرفر ببوست. شكرا لك على البوست الثاني💖`)
+          .setImage(`https://images-ext-1.discordapp.net/external/fZGVIIB0RH1LxPacA8OfFHc_8YpMV5Y9uVdH5Jem1es/https/probot.media/kYBKdSyYQi.gif`);//هنا تقدر تغير الرسالة
         return client.channels.cache.get(idchannel).send(embed)
     }
-
 });
 client.login(process.env.token)
